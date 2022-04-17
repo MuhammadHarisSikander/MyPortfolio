@@ -33,19 +33,22 @@ const Footer = ({
       {...props}
       className={classes}
     >
-      <div className="container">
+      <div className="container" style={{justifyContent:'center',alignContent:'center',textAlign:'center',alignItems:'center',display:'flex'}}>
         <div className={
           classNames(
             'site-footer-inner',
             topDivider && 'has-top-divider'
           )}>
-          <div className="footer-top space-between text-xxs">
-            <Logo />
-            <FooterSocial />
+          <div className="footer-top space-between text-xxs" style={{justifyContent:'center',alignContent:'center',textAlign:'center',alignItems:'center',}} >
+            {/* <Logo /> */}
+            {/* <FooterSocial /> */}
+             {/* <h3 data-reveal-delay="200">
+              Muhammad Haris Sikander 
+            </h3> */}
           </div>
-          <div className="footer-bottom space-between text-xxs invert-order-desktop">
-            <FooterNav />
-            <div className="footer-copyright">Made by <a href="https://cruip.com">Cruip</a>. All right reserved</div>
+          <div className="footer-bottom text-xxs invert-order-desktop">
+            {/* <FooterNav /> */}
+            <div className="footer-copyright">Made by <a href="https://cruip.com">Haris Sikander</a>. All right reserved</div>
           </div>
         </div>
       </div>

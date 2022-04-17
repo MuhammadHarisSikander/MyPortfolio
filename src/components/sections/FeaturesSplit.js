@@ -3,8 +3,8 @@ import classNames from 'classnames';
 import { SectionSplitProps } from '../../utils/SectionProps';
 import SectionHeader from './partials/SectionHeader';
 import Image from '../elements/Image';
-import { CircularProgressbar, buildStyles } from 'react-circular-progressbar';
-import {CircularProgress} from '@mui/material'
+import { ThemeIcon, RingProgress, Text, Center } from '@mantine/core';
+// import { Check } from 'tabler-icons-react';
 
 
 
@@ -30,6 +30,17 @@ const FeaturesSplit = ({
   imageFill,
   ...props
 }) => {
+
+  const [progress, setProgress] = React.useState(10);
+
+   React.useEffect(() => {
+    const timer = setInterval(() => {
+      setProgress((prevProgress) => (prevProgress >= 100 ? 0 : prevProgress + 10));
+    }, 800);
+    return () => {
+      clearInterval(timer);
+    };
+  }, []);
 
   const outerClasses = classNames(
     'features-split section',
@@ -57,18 +68,103 @@ const FeaturesSplit = ({
     title: 'Workflow that just works',
     paragraph: 'Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum — semper quis lectus nulla at volutpat diam ut venenatis.'
   };
-  const percentage = 50;
+  // const percentage = 50;
 
 
   return (
-    <section
-      {...props}
-      className={outerClasses}
-    >
+   
 
 
-      <div className="container">
-       <CircularProgress variant="determinate" value={60} />
+      <div className="container" style={{display:'flex',justifyContent:'space-around',flexWrap:'wrap',width:'50%',marginBottom:50}}  >
+      
+<div style={{ textAlign:'-webkit-center'}}>
+              <RingProgress
+        sections={[{ value: 40, color: '#5658DD' }]}
+        label={
+          <Text color="#5658DD" weight={700} align="center" size="xl">
+            40%
+          </Text>
+        }
+        />
+        <h4>
+          React-JS
+        </h4>
+        </div>
+
+        <div style={{ textAlign:'-webkit-center'}}>
+              <RingProgress
+        sections={[{ value: 40, color: '#5658DD' }]}
+        label={
+          <Text color="#5658DD" weight={700} align="center" size="xl">
+            40%
+          </Text>
+        }
+        />
+        <h4>
+          React Native
+        </h4>
+        </div>
+
+        <div style={{ textAlign:'-webkit-center'}}>
+              <RingProgress
+        sections={[{ value: 40, color: '#5658DD' }]}
+        label={
+          <Text color="#5658DD" weight={700} align="center" size="xl">
+            40%
+          </Text>
+        }
+        />
+        <h4>
+          Selenium
+        </h4>
+        </div>
+
+        <div style={{ textAlign:'-webkit-center'}}>
+              <RingProgress
+        sections={[{ value: 40, color: '#5658DD' }]}
+        label={
+          <Text color="#5658DD" weight={700} align="center" size="xl">
+            40%
+          </Text>
+        }
+        />
+        <h4>
+          Cypress
+        </h4>
+        </div>
+
+                <div style={{ textAlign:'-webkit-center'}}>
+              <RingProgress
+        sections={[{ value: 40, color: '#5658DD' }]}
+        label={
+          <Text color="#5658DD" weight={700} align="center" size="xl">
+            40%
+          </Text>
+        }
+        />
+        <h4>
+          API's Testing
+        </h4>
+        </div>
+
+                <div style={{ textAlign:'-webkit-center'}}>
+              <RingProgress
+        sections={[{ value: 40, color: '#5658DD' }]}
+        label={
+          <Text color="#5658DD" weight={700} align="center" size="xl">
+            40%
+          </Text>
+        }
+        />
+        <h4>
+          Performance Testing
+        </h4>
+        </div>
+
+       
+      
+
+
         {/* <div style={{ width: 150, }}>
 
           <CircularProgressbar
@@ -256,7 +352,7 @@ const FeaturesSplit = ({
           </div>
         </div> */}
       </div>
-    </section>
+    
   );
 }
 

@@ -47,13 +47,13 @@ const Cta = ({
       {...props}
       className={outerClasses}
     >
-      <div className="container">
+      <div className="container" style={{}}>
         <div
           className={innerClasses}
         >
           <div className="cta-slogan">
             <h3 className="m-0">
-              For previewing layouts and visual?
+              You can now contact me
               </h3>
           </div>
           <div className="cta-action">

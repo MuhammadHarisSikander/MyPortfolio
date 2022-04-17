@@ -79,13 +79,16 @@ const Header = ({
       {...props}
       className={classes}
     >
-      <div className="container">
+      <div className="container" style={{display:'flex',justifyContent:'center'}} >
         <div className={
           classNames(
             'site-header-inner',
             bottomDivider && 'has-bottom-divider'
           )}>
-          <Logo />
+          {/* <Logo /> */}
+           <h3 className="mt-0 mb-16 reveal-from-bottom" data-reveal-delay="200">
+              Muhammad Haris Sikander <span className="text-color-primary"></span>
+            </h3>
           {!hideNav &&
             <>
               <button
@@ -105,7 +108,7 @@ const Header = ({
                     'header-nav',
                     isActive && 'is-active'
                   )}>
-                <div className="header-nav-inner">
+                {/* <div className="header-nav-inner">
                   <ul className={
                     classNames(
                       'list-reset text-xs',
@@ -123,7 +126,7 @@ const Header = ({
                         <Link to="#0" className="button button-primary button-wide-mobile button-sm" onClick={closeMenu}>Sign up</Link>
                       </li>
                     </ul>}
-                </div>
+                </div> */}
               </nav>
             </>}
         </div>
